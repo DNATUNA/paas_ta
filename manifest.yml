@@ -1,0 +1,6 @@
+---
+applications:
+- name: cf-ex-nodejs
+  memory: 512M
+  instances: 1
+  path: .
