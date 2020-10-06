@@ -6,20 +6,10 @@
   "scripts": {
     "start": "tsc && pm2 start dist",
     "test": "cross-env NODE_ENV=test jest ./tests/features/index.spec.ts --forceExit",
-    "dev": "nodemon"
+    "dev": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --exec 'ts-node src/index.ts'"
   },
   "author": "",
   "license": "ISC",
-  "nodemonConfig": {
-    "watch": [
-      "src/*"
-    ],
-    "ext": "ts",
-    "ignore": [
-      "**/*.spec.ts"
-    ],
-    "exec": "cross-env NODE_ENV=dev ts-node src/index.ts"
-  },
   "dependencies": {
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.1",
@@ -36,6 +26,7 @@
   "devDependencies": {
     "@types/express": "^4.17.6",
     "@types/jest": "^24.9.1",
+    "@types/morgan": "^1.9.1",
     "@types/node": "^14.0.13",
     "@types/supertest": "^2.0.8",
     "@types/uuid": "^7.0.3",
@@ -53,6 +44,6 @@
     "supertest": "^4.0.2",
     "ts-jest": "^24.3.0",
     "ts-node": "^8.9.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7"
   }
 }
